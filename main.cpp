@@ -51,7 +51,7 @@ class MyMath {
 			}
 		}
 		// Формирвоание ответа для линейного уравнения
-		void	count_roots_1()		{ ans+= "The solution is:\n" + to_string(-c / b); }
+		void	count_roots_1()		{ ans+= "The solution is:\n" + to_string(c != 0 ? (-c / b) : 0) + "\n"; }
 		// Вычисление дискриминанта в квадрате
 		double	discriminant_2()	{ return (b * b - 4 * a * c); }
 	public:
@@ -78,5 +78,6 @@ int main() {
 	//MyMath A(1, -2, -3);
 	//MyMath B(6, 5, -4);
 	//MyMath C(4, 1, 12);
-	MyMath C(0, 0, 0);
+	//MyMath C(0, 0, 0);
+	MyMath C(0, 7, 0);
 }
