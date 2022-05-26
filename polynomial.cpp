@@ -66,12 +66,8 @@ bool	Polynomial::parser() {
 	degree = coef_reduction(coef1, coef2, coef);
 	ans += reduced_form(coef);
 	c = coef.size() > 0 ? coef[0] : 0;
-	b = coef.size() > 0 ? coef[1] : 0;
-	a = coef.size() > 0 ? coef[2] : 0;
-
-	// cout << "a= " << a << endl;
-	// cout << "b= " << b << endl;
-	// cout << "c= " << c << endl;
+	b = coef.size() > 1 ? coef[1] : 0;
+	a = coef.size() > 2 ? coef[2] : 0;
 	return (true);
 }
 // Парсер на запрещённые символы и наличи одного символа '='
@@ -144,7 +140,7 @@ string	Polynomial::reduced_form(vector<double> &coef) {
 		if (i+1 < coef.size())
 			temp += (coef[i+1] >= 0 ? " + " : " - ");
 	}
-	return (temp + "= 0\n");
+	return (temp + " = 0\n");
 }
 //====================================================================================
 //=                 Вспомогательные математические функции                           =

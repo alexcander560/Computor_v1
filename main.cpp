@@ -1,8 +1,11 @@
 #include "polynomial.hpp"
 
-int main() {
-	// https://planetcalc.ru/168/
-	Polynomial A1("5 * X^0 + 4 * X^1 - 9.3 * X^2 + 0 * X^3 = 1 * X^0");
+// https://planetcalc.ru/168/
+int main(int argc, char **argv) {
+	if (argc != 2)
+		cout << "Error\nInvalid number of arguments\n";
+	else
+		Polynomial Test(argv[1]);
 
 	// Polynomial A1(1, 7, 12);		// -> 2 корня(d=)(-3, -4)
 	// cout << "========" << endl;
