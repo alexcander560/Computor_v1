@@ -54,7 +54,7 @@ double	Polynomial::discriminant_2()	{ return (b * b - 4 * a * c); }
 //====================================================================================
 //=                     Функции для парсинга уравнения                               =
 //====================================================================================
-// Общий парсер строки (ДОДЕЛЫВАТЬ!!!)
+// Общий парсер строки
 bool	Polynomial::parser() {
 	int				ind = 0;
 	vector<double>	coef, coef1, coef2;
@@ -114,7 +114,13 @@ int		Polynomial::parser_coef(vector<double> &coef, int start) {
 			}
 		}
 		else if (temp != "") {
-			coef.push_back(m * stod(temp));
+			try {
+				coef.push_back(m * stod(temp));
+			}
+			catch (std::out_of_range& e) {
+				cout << e.what() << endl;
+				exit (1);
+			}
 			m = 1;
 			temp = "";
 		}

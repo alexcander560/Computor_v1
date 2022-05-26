@@ -20,7 +20,7 @@ class Polynomial {
 		void	count_roots_2();
 		// Вычисление дискриминанта в квадрате
 		double	discriminant_2();
-		// Общий парсер строки (ДОДЕЛЫВАТЬ!!!)
+		// Общий парсер строки
 		bool	parser();
 		// Парсер на запрещённые символы и наличи одного символа '='
 		bool	parser_forbidden();
